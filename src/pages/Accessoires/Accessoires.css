@@ -1,0 +1,12 @@
+/* Accessoires.css */
+
+.accessoires-page {
+    padding: 20px;
+}
+
+.accessoires-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacement entre les produits */
+    justify-content: center; /* Centre les produits si ils ne remplissent pas toute la largeur */
+}

@@ -1,0 +1,9 @@
+/* NewIn.css */
+
+/* Réutilisez les styles de Accessoires.css ou ajoutez des styles spécifiques à New-In ici */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}

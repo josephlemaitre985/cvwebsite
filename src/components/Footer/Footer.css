@@ -1,0 +1,87 @@
+.footer {
+    background-color: #343a40; /* Couleur de fond du footer plus sombre */
+    color: white; /* Texte en blanc pour contraster avec le fond sombre */
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne sur petits écrans */
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px; /* Minimum width for each section */
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column; /* Organise le contenu verticalement */
+}
+
+.newsletter .input-group {
+    display: flex;
+    margin-top: 10px;
+}
+
+.newsletter input[type="email"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc; /* Bordure subtile pour plus d'élégance */
+    border-radius: 5px 0 0 5px; /* Bordures arrondies à gauche */
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    background-color: #6c757d; /* Gris élégant */
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0; /* Bordures arrondies à droite */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.newsletter button:hover {
+    background-color: #5a6268; /* Gris foncé au survol */
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 24px;
+}
+
+.social-icon:hover {
+    color: #adb5bd; /* Couleur subtile au survol */
+}
+
+.guarantees ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.guarantees li {
+    padding: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}

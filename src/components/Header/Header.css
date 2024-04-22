@@ -1,0 +1,144 @@
+/* Styles généraux pour l'en-tête */
+header {
+    background-color: #ffffff;
+    padding: 10px 20px; /* Ajustez les paddings si nécessaire */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; /* Assure que le header prend toute la largeur */
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo, .center-menu, .header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    flex-grow: 0; /* Ajuste la croissance du flex pour le logo */
+    justify-content: flex-start; /* Alignement du contenu du logo à gauche */
+}
+
+.header-logo a, .center-menu a, .header-icons a {
+    color: #606060;
+    text-decoration: none; /* Retire le soulignement */
+    padding: 8px 12px;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    transition: all 0.2s ease-in-out;
+}
+
+.header-logo img {
+    height: 40px; /* Hauteur du logo */
+    width: auto; /* Largeur automatique pour maintenir le rapport d'aspect */
+    margin-right: 10px; /* Espace entre le logo et le texte */
+}
+
+.header-logo a:hover, .center-menu a:hover, .header-icons a:hover {
+    background-color: #444;
+    color: #ffffff;
+    border-color: #444;
+}
+
+.header-logo a {
+    font-size: 1.5em; /* Augmenter la taille du texte du logo */
+    font-weight: bold; /* Rendre le texte en gras */
+}
+
+.center-menu {
+    justify-content: center;
+    flex-grow: 1; /* Permet au menu central de prendre l'espace restant */
+}
+
+.header-icons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header-icon {
+    font-size: 24px; /* Taille des icônes */
+}
+
+.login-system {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    padding: 15px;
+    border-radius: 5px;
+    flex-direction: column;
+    width: 240px; /* Ajustement de la largeur */
+    z-index: 1050;
+}
+
+.icon-container:hover .login-system {
+    display: flex;
+}
+
+.login-system input, .login-system button {
+    width: calc(100% - 20px); /* Réduit la largeur pour tenir compte du padding */
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
+}
+
+.login-system button {
+    background-color: #333; /* Fond plus sombre pour le bouton */
+    color: #fff;
+    cursor: pointer;
+}
+
+.login-system button:hover {
+    background-color: #555; /* Changement de couleur au survol */
+}
+
+.menu-button {
+    display: none; /* Cacher le bouton de menu sur les écrans plus grands */
+}
+
+@media (max-width: 768px) {
+    .center-menu {
+        display: none; /* Cache le menu par défaut sur les petits écrans */
+        flex-direction: column; /* Orientation verticale des liens */
+        position: absolute;
+        background-color: #ffffff;
+        top: 64px; /* Ajustez en fonction de la hauteur de votre en-tête */
+        width: 100%;
+        left: 0;
+        border-top: 1px solid #eeeeee;
+    }
+
+    .center-menu.open {
+        display: flex; /* Affiche le menu quand il est ouvert */
+    }
+
+    .menu-button {
+        display: block; /* Affiche le bouton de menu sur les petits écrans */
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .header-icons {
+        justify-content: space-between; /* Espacement entre les icônes et le bouton de menu */
+    }
+
+    .header-logo, .center-menu a, .header-icons a {
+        font-size: 1rem; /* Réduit la taille de la police pour les petits écrans */
+    }
+}

@@ -1,0 +1,67 @@
+/* src/components/ProductItem/ProductItem.css */
+
+.product-item {
+    background: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    position: relative; /* Pour positionnement absolu des éléments enfants si nécessaire */
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover; /* Garantit que l'image couvre bien l'espace dédié sans se déformer */
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Assure que le footer prend toute la largeur de la carte */
+    margin-top: 10px; /* Espacement entre l'image et le footer */
+}
+
+.product-size select {
+    flex-grow: 1; /* Permet au sélecteur de taille de prendre l'espace nécessaire */
+}
+
+.add-to-cart {
+    background-color: #f0f0f0; /* Couleur plus subtile */
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 10px; /* Espacement entre le bouton et l'icône de favori */
+}
+
+.add-to-favorites {
+    color: #ff4466; /* Couleur de l'icône de favori */
+    font-size: 1.5rem; /* Ajuste la taille de l'icône */
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.add-to-cart, .add-to-favorites {
+    padding: 4px 8px; /* Rendre les boutons plus petits */
+    font-size: 0.8rem; /* Réduire la taille du texte dans les boutons */
+    transition: background-color 0.3s, color 0.3s; /* Transition douce pour le survol */
+}
+
+.add-to-cart:hover, .add-to-favorites:hover {
+    background-color: #cccccc; /* Couleur au survol */
+    color: #333333; /* Couleur du texte au survol */
+}
+
+.product-message {
+    color: #333333; /* Couleur du texte pour le message */
+    font-size: 0.8rem; /* Taille du texte pour le message */
+    margin-top: 10px; /* Espacement au-dessus du message */
+}

@@ -1,0 +1,261 @@
+/* src/pages/Home/Home.css */
+
+/* Styles généraux et configurations de base */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4; /* Un fond légèrement gris pour un contraste doux */
+}
+
+/* Section héros avec gestion responsive de l'image de fond */
+.hero-section {
+  background-image: url('../../images/imagehomepage.jpeg'); /* Utilisez ce chemin */
+  color: white;
+  text-align: center;
+  padding: 150px 20px;
+  background-size: cover; /* Assure que l'image de fond couvre toute la section */
+  background-position: center; /* Centre l'image de fond */
+  font-weight: 500;
+}
+
+/* Styles pour le titre et le sous-titre dans la section héro */
+.hero-section h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.hero-section p {
+  font-size: 1.25em;
+  font-weight: 400;
+}
+
+/* Styles pour la grille des produits */
+.home-page .product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Trois produits par ligne pour un affichage équilibré */
+  gap: 30px;
+  padding: 0 20px; /* Ajout de padding à gauche et à droite */
+  max-width: 1200px; /* Limite la largeur maximum de la grille */
+  margin: 0 auto; /* Centre la grille horizontalement */
+}
+
+@media (max-width: 768px) {
+  .home-page .product-grid {
+      grid-template-columns: 1fr; /* Une seule colonne sur petits écrans */
+      padding: 0 10px;
+  }
+}
+
+/* Styles pour les items de produit */
+.home-page .product-item {
+  background: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+}
+
+.home-page .product-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* Arrondis pour les images */
+}
+
+.home-page .product-item h3 {
+  margin: 15px 0 10px;
+  font-weight: 500;
+}
+
+.home-page .product-item p {
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Styles pour la section "À propos" */
+.about-section {
+  padding: 60px 20px;
+  background-color: #ffffff; /* Utiliser un fond clair pour une apparence épurée */
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Ombre subtile pour la profondeur */
+  margin: 40px 0; /* Ajouter de l'espace autour de la section */
+}
+
+.about-section h2 {
+  font-size: 2.5em;
+  color: #343a40; /* Un gris foncé élégant */
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 1.5em;
+  color: #6c757d; /* Gris moyen pour le texte */
+  line-height: 1.6;
+  max-width: 800px; /* Limiter la largeur du texte pour une meilleure lisibilité */
+  margin: auto; /* Centrer le texte dans la section */
+}
+
+/* Styles pour les témoignages */
+.testimonials {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Permettre aux témoignages de s'envelopper sur plusieurs lignes */
+  margin-top: 30px;
+}
+
+.testimonial {
+  background: #f8f9fa; /* Un fond très clair pour chaque témoignage */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: calc(50% - 20px); /* Calcul pour l'affichage de deux témoignages par ligne avec un espace */
+  margin-bottom: 20px;
+}
+
+.testimonial p {
+  font-size: 1.2em;
+  color: #495057; /* Un gris foncé doux */
+}
+
+.testimonial .author {
+  font-style: italic;
+  font-size: 1em;
+  color: #6c757d;
+  margin-top: 10px;
+}
+
+/* Styles pour la section des produits phares */
+.featured-products-section {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin: 40px 0;
+}
+
+.featured-products-section h2 {
+  font-size: 2.5em;
+  color: #343a40;
+  margin-bottom: 30px;
+}
+
+/* Styles pour la grille des produits */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Trois produits par ligne pour un affichage équilibré */
+  gap: 30px;
+  padding: 0; /* Enlever le padding si nécessaire */
+}
+
+/* Styles pour les éléments individuels des produits */
+.product-item {
+  background: white; /* Fond blanc pour chaque produit */
+  border: none; /* Pas de bordure pour un look plus épuré */
+  border-radius: 10px; /* Arrondis plus prononcés */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre subtile pour de la profondeur */
+  padding: 20px;
+  text-align: left; /* Alignement à gauche pour un aspect plus traditionnel */
+}
+
+.product-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* Arrondis pour les images */
+}
+
+.product-item h3 {
+  margin: 15px 0 10px;
+  font-weight: 500;
+}
+
+.product-item p {
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Styles pour la bannière de promotion */
+/* Styles pour la bannière de promotion et les boutons d'action */
+.promotion-banner {
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.banner-content h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.banner-content p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.banner-content .cta-button {
+  padding: 12px 24px;
+  font-size: 1.2em;
+  background-color: #6c757d; /* Gris sombre élégant */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.banner-content .cta-button:hover {
+  background-color: #5a6268; /* Un gris légèrement plus foncé au survol */
+  transform: translateY(-2px); /* Petit effet de levage au survol */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre discrète pour la profondeur */
+}
+
+.hero-section .cta-button {
+  padding: 12px 24px;
+  font-size: 1.2em;
+  background-color: #343a40; /* Noir charbon élégant */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-section .cta-button:hover {
+  background-color: #23272b; /* Un noir légèrement plus foncé au survol */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour la section de la galerie d'images */
+.image-gallery {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin: 40px 0;
+}
+
+.image-gallery h2 {
+  font-size: 2.5em;
+  color: #343a40;
+  margin-bottom: 30px;
+}
+
+.gallery-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gallery-images img {
+  width: calc(33.333% - 20px); /* Trois images par ligne avec un espace */
+  height: 500px; /* Hauteur fixe pour toutes les images */
+  object-fit: cover; /* Couvre l'espace disponible sans déformer l'image */
+  border-radius: 8px;
+}

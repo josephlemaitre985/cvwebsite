@@ -1,0 +1,82 @@
+/* src/pages/Panier/Panier.css */
+
+.panier-page {
+  padding: 80px 40px;
+  background-color: #f9f9f9;
+  min-height: calc(100vh - 80px);
+}
+
+.articles-liste {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.panier-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.item-image {
+  width: 100px; /* Ajustez la taille de l'image comme vous le souhaitez */
+  height: auto;
+  border-radius: 10px; /* Arrondis pour les images */
+}
+
+.panier-item h3 {
+  margin: 0 10px;
+  font-size: 1em;
+}
+
+.panier-item select, .panier-item input {
+  margin: 0 10px;
+  padding: 5px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.remove-item {
+  font-size: 24px; /* Ajustez la taille de l'icône comme vous le souhaitez */
+  color: #ff4444;
+  cursor: pointer;
+}
+
+.remove-item:hover {
+  color: #cc0000;
+}
+
+.total-panier {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.total-panier p {
+  background: white;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.valider-panier {
+  display: block;
+  width: 100%;
+  padding: 15px 20px;
+  margin-top: 20px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.valider-panier:hover {
+  background-color: #333;
+}

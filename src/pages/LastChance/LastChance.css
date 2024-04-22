@@ -1,0 +1,34 @@
+.last-chance-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px
+}
+
+.last-chance-page .product-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: calc(25% - 20px);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.last-chance-page .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.original-price {
+    text-decoration: line-through;
+    color: grey;
+}
+
+.sale-price {
+    color: red;
+    font-weight: bold;
+}
