@@ -16,26 +16,26 @@ function Connexion() {
     if (loggedInUser) {
       try {
         const parsedUser = JSON.parse(loggedInUser);
-        if (parsedUser && parsedUser.username) {  // Assurez-vous que l'objet utilisateur est valide
+        if (parsedUser && parsedUser.username) {
           setUser(parsedUser);
         } else {
           throw new Error("Invalid user data");
         }
       } catch (error) {
         console.error("Failed to parse user data from localStorage:", error);
-        localStorage.removeItem('user');  // Enlève les données corrompues pour éviter des erreurs récurrentes
-        setUser(null);  // Réinitialise l'état de l'utilisateur
+        localStorage.removeItem('user');
+        setUser(null);
       }
     }
   }, []);
-  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const url = `http://localhost:5000/api/users/${isSignUp ? 'register' : 'login'}`;
+    // Utilisation de la variable d'environnement pour l'URL de l'API
+    const url = `${process.env.REACT_APP_API_URL}/users/${isSignUp ? 'register' : 'login'}`;
     try {
       const payload = isSignUp ? { username, email, password } : { email, password };
-      
+
       const response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -46,8 +46,7 @@ function Connexion() {
       const data = await response.json();
       if (response.ok) {
         if (!isSignUp || (isSignUp && !data.user)) {
-          // Gère l'inscription sans connexion automatique
-          setMessage(data.message + ' Please log in.'); // Invite à se connecter après l'inscription
+          setMessage(data.message + ' Please log in.');
           if (!isSignUp && data.user) {
             localStorage.setItem('user', JSON.stringify(data.user));
             setUser(data.user);

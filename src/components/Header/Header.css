@@ -141,6 +141,8 @@ header {
 
     .menu-button {
         display: block; /* Affiche le bouton de menu sur les petits écrans */
+        z-index: 1100; /* Assure qu'il est au-dessus des autres éléments */
+        color: #606060; /* Assure que la couleur est visible sur le fond */
     }
 
     .header-icons {

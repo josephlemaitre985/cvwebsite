@@ -3,16 +3,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 100px
+    margin-top: 100px;
 }
 
 .last-chance-page .product-item {
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
-    width: calc(25% - 20px);
+    width: calc(25% - 20px); /* Taille initiale pour les écrans larges */
     text-align: center;
     box-sizing: border-box;
+    overflow: hidden; /* Empêche les débordements de contenu */
 }
 
 .last-chance-page .product-list {
@@ -22,7 +23,6 @@
     gap: 20px;
 }
 
-
 .original-price {
     text-decoration: line-through;
     color: grey;
@@ -31,4 +31,13 @@
 .sale-price {
     color: red;
     font-weight: bold;
+}
+
+/* Media Query pour les petits écrans, ajustement pour 2 articles par ligne */
+@media (max-width: 768px) {
+    .last-chance-page .product-item {
+        width: calc(50% - 20px); /* Ajuste pour deux articles par ligne */
+        padding: 10px;
+        margin-bottom: 10px; /* Ajoute un espace en bas de chaque carte */
+    }
 }

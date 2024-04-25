@@ -1,5 +1,26 @@
+/* Styles existants pour la page boutique */
 .boutique-page {
     margin-top: 100px;
-   
     text-align: center;
+}
+
+/* Styles pour le conteneur des produits - ajustez en fonction de votre structure HTML */
+.boutique-page .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centre les produits horizontalement */
+    gap: 20px; /* Espacement entre les produits */
+}
+
+/* Style hypothétique pour chaque produit */
+.boutique-page .product-item {
+    width: calc(50% - 20px); /* Calcule la largeur pour deux produits par ligne avec un gap de 20px */
+    margin-bottom: 20px; /* Espace vertical entre les rangées de produits */
+}
+
+/* Media Queries pour ajuster l'affichage sur différents écrans */
+@media (min-width: 768px) {
+    .boutique-page .product-item {
+        width: calc(25% - 20px); /* Largeur pour quatre produits par ligne sur les écrans plus larges */
+    }
 }

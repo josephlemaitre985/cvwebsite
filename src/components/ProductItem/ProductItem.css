@@ -59,6 +59,27 @@
     background-color: #cccccc; /* Couleur au survol */
     color: #333333; /* Couleur du texte au survol */
 }
+/* Media Query pour les appareils mobiles */
+@media (max-width: 768px) {
+    .add-to-cart, .add-to-favorites {
+        font-size: 0.7rem; /* Réduire la taille du texte pour les petits écrans */
+        padding: 3px 6px; /* Réduire le padding pour économiser de l'espace */
+    }
+
+    .product-footer {
+        flex-direction: column; /* Change l'orientation pour empiler les boutons verticalement */
+        align-items: center; /* Centre les boutons dans le footer */
+    }
+
+    .add-to-cart {
+        margin-bottom: 5px; /* Ajoute un espace entre les boutons lorsqu'ils sont empilés */
+        margin-right: 0; /* Enlève la marge droite qui n'est plus nécessaire */
+    }
+
+    .add-to-favorites {
+        margin-bottom: 10px; /* Espacement supplémentaire pour la dernière icône */
+    }
+}
 
 .product-message {
     color: #333333; /* Couleur du texte pour le message */

@@ -5,6 +5,18 @@
     padding: 20px;
 }
 
+@media (max-width: 768px) {
+    .product-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 produits par ligne pour les écrans moyens et petits */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-list {
+        grid-template-columns: 1fr; /* 1 produit par ligne pour les très petits écrans */
+    }
+}
+
 .product-item {
     display: flex;
     flex-direction: column;
