@@ -2,6 +2,9 @@ const express = require('express');
 const userRoutes = require('./routes/userRoutes');
 const sequelize = require('./config/database');
 const cors = require('cors');
+require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV}`
+  });
 
 const app = express();
 const port = process.env.PORT || 5000; // Changez le port ici
