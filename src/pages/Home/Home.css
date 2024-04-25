@@ -6,6 +6,8 @@ body {
   margin: 0;
   padding: 0;
   background: #f4f4f4; /* Un fond légèrement gris pour un contraste doux */
+  width: 100%;
+  overflow-x: hidden; /* Empêche le défilement horizontal */
 }
 
 /* Section héros avec gestion responsive de l'image de fond */
@@ -17,6 +19,22 @@ body {
   background-size: cover; /* Assure que l'image de fond couvre toute la section */
   background-position: center; /* Centre l'image de fond */
   font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  /* Ajustements pour les écrans très petits */
+  .hero-section {
+      padding: 120px 10px; /* Réduire le padding pour les petits écrans */
+  }
+
+  .product-item img, .gallery-images img {
+      width: 100%; /* S'assure que les images ne débordent pas */
+      height: auto; /* Maintient le ratio d'aspect des images */
+  }
+
+  .testimonial, .gallery-images img {
+      width: 100%; /* S'assure que les témoignages et les images s'adaptent à la largeur de l'écran */
+  }
 }
 
 /* Styles pour le titre et le sous-titre dans la section héro */

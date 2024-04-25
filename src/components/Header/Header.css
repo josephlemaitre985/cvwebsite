@@ -11,6 +11,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%; /* Assurez-vous que le header ne dépasse pas la largeur de l'écran */
+    box-sizing: border-box; /* Inclut padding dans la largeur calculée */
 }
 
 .header-logo, .center-menu, .header-icons {
@@ -109,6 +111,16 @@ header {
 
 .menu-button {
     display: none; /* Cacher le bouton de menu sur les écrans plus grands */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px; /* Taille appropriée pour l'icône hamburger */
+    padding: 8px;
+}
+
+.menu-button:hover {
+    color: #ffffff;
+    background-color: #444;
 }
 
 @media (max-width: 768px) {
@@ -117,7 +129,7 @@ header {
         flex-direction: column; /* Orientation verticale des liens */
         position: absolute;
         background-color: #ffffff;
-        top: 64px; /* Ajustez en fonction de la hauteur de votre en-tête */
+        top: 60px; /* Ajustez en fonction de la hauteur de votre en-tête */
         width: 100%;
         left: 0;
         border-top: 1px solid #eeeeee;
@@ -129,14 +141,16 @@ header {
 
     .menu-button {
         display: block; /* Affiche le bouton de menu sur les petits écrans */
-        background: none;
-        border: none;
-        cursor: pointer;
     }
 
     .header-icons {
-        justify-content: space-between; /* Espacement entre les icônes et le bouton de menu */
+        position: absolute; /* Ajustement pour que les icônes restent dans l'en-tête */
+        top: 10px; /* Espace par rapport au haut de l'en-tête */
+        right: 10px; /* Espace par rapport au côté droit de l'en-tête */
+        flex-direction: row; /* Icônes disposées horizontalement */
+        z-index: 1050; /* S'assure que les icônes sont au-dessus des autres éléments */
     }
+
 
     .header-logo, .center-menu a, .header-icons a {
         font-size: 1rem; /* Réduit la taille de la police pour les petits écrans */

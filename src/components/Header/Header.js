@@ -1,23 +1,29 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { RiUserLine, RiShoppingCartLine, RiHeartLine } from 'react-icons/ri';
+import { RiUserLine, RiShoppingCartLine, RiHeartLine, RiMenu3Line } from 'react-icons/ri'; // Import des icônes nécessaires
 import './Header.css';
 
 function Header() {
     const [isLoginOpen, setIsLoginOpen] = useState(false);
-    const navigate = useNavigate(); // Hook pour la navigation
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleLoginClick = () => {
-        navigate('/connexion'); // Naviguer vers la page de connexion au clic
+        navigate('/connexion');
+    };
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
     };
 
     return (
         <header>
             <div className="header-logo">
-                <img src="/logomandj.jpeg" alt="Logo MandJ" className="logo-image" /> {/* Utilisation du logo depuis le dossier public */}
+                <img src="/logomandj.jpeg" alt="Logo MandJ" className="logo-image" />
                 <Link to="/" className="header-btn">MandJ</Link>
+                <button className="menu-button" onClick={toggleMenu}><RiMenu3Line /></button>  {/* Bouton de menu hamburger */}
             </div>
-            <div className="center-menu">
+            <div className={`center-menu ${isMenuOpen ? 'open' : ''}`}>
                 <Link to="/last-chance" className="header-btn">Last Chance</Link>
                 <Link to="/new-in" className="header-btn">New-in</Link>
                 <Link to="/boutique" className="header-btn">Prêt à porter</Link>
