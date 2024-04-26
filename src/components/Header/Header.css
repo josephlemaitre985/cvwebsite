@@ -116,6 +116,7 @@ header {
     cursor: pointer;
     font-size: 24px; /* Taille appropriée pour l'icône hamburger */
     padding: 8px;
+    margin-left: 70px
 }
 
 .menu-button:hover {
