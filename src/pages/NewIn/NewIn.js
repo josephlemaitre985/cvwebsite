@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ProductItem from '../../components/ProductItem/ProductItem'; // Ajustez le chemin selon la structure de votre projet
+import ProductList from '../../components/ProductList/ProductList'; // Ajustez le chemin selon la structure de votre projet
 
 // Simulons une récupération de données pour les nouveautés
 const fauxNouveautes = [
@@ -22,7 +22,7 @@ function NewIn() {
       <p>Découvrez nos dernières nouveautés.</p>
       <div className="product-list">
         {nouveautes.map(nouveaute => (
-          <ProductItem key={nouveaute.id} product={nouveaute} />
+          <ProductList key={nouveaute.id} product={nouveaute} />
         ))}
       </div>
     </div>
