@@ -116,7 +116,7 @@ header {
     cursor: pointer;
     font-size: 24px; /* Taille appropriée pour l'icône hamburger */
     padding: 8px;
-    margin-left: 70px
+    
 }
 
 .menu-button:hover {
@@ -141,17 +141,21 @@ header {
     }
 
     .menu-button {
-        display: block; /* Affiche le bouton de menu sur les petits écrans */
-        z-index: 1100; /* Assure qu'il est au-dessus des autres éléments */
-        color: #606060; /* Assure que la couleur est visible sur le fond */
+        display: block;
+        position: absolute; /* Position absolue pour un meilleur contrôle */
+        top: 10px; /* Aligné avec les icônes */
+        right: 10px; /* À l'extrême droite de l'en-tête */
+        z-index: 1100;
+        color: #606060;
+
     }
 
     .header-icons {
-        position: absolute; /* Ajustement pour que les icônes restent dans l'en-tête */
-        top: 10px; /* Espace par rapport au haut de l'en-tête */
-        right: 10px; /* Espace par rapport au côté droit de l'en-tête */
-        flex-direction: row; /* Icônes disposées horizontalement */
-        z-index: 1050; /* S'assure que les icônes sont au-dessus des autres éléments */
+        position: absolute;
+        top: 10px;
+        right: 50px; /* Ajusté pour décaler les icônes vers la gauche */
+        flex-direction: row;
+        z-index: 1050;
     }
 
 
