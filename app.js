@@ -1,33 +1,48 @@
+// Charger les variables d'environnement en fonction de l'environnement
+if (process.env.NODE_ENV === 'production') {
+    require('dotenv').config({ path: './.env.production' });
+} else {
+    require('dotenv').config({ path: './.env.development' });
+}
+
+// Logs pour débogage
+console.log('Environment:', process.env.NODE_ENV);
+console.log('Database Host:', process.env.DB_HOST);
+console.log('Database Port:', process.env.DB_PORT);
+console.log('Database Name:', process.env.DB_NAME);
+console.log('API URL:', process.env.REACT_APP_API_URL);
+
 const express = require('express');
 const userRoutes = require('./routes/userRoutes');
 const sequelize = require('./config/database');
 const cors = require('cors');
-require('dotenv').config({
-    path: `.env.${process.env.NODE_ENV}`
-  });
 
 const app = express();
-const port = process.env.PORT || 5000; // Changez le port ici
+const port = process.env.PORT || 5000;
 
-app.use(cors()); // Applique CORS pour toutes les requêtes
-
-// Middleware pour s'assurer que le JSON est correctement interprété et que le Content-Type est correct
-app.use(express.json()); // Pour parser le JSON entrant
+app.use(cors());
+app.use(express.json());
 app.use((req, res, next) => {
-    res.header('Content-Type', 'application/json'); // Assurez-vous que chaque réponse est de type application/json
+    res.header('Content-Type', 'application/json');
     next();
 });
 
-// Ajoutez cette route pour gérer les requêtes GET à la racine
 app.get('/', (req, res) => {
-    res.json({ message: 'Hello from the backend!' }); // Retourne du JSON au lieu de texte brut
+    res.json({ message: 'Hello from the backend!' });
 });
 
-app.use('/api/users', userRoutes); // Chemin de base pour les routes utilisateur
+app.use('/api/users', userRoutes);
 
-// Connexion à la base de données et démarrage du serveur
-sequelize.sync().then(() => {
-    app.listen(port, () => {
-        console.log(`Server running on http://localhost:${port}`);
+// Tester la connexion à la base de données avant de démarrer le serveur
+sequelize.authenticate()
+    .then(() => {
+        console.log('Connexion à la base de données réussie.');
+        app.listen(port, () => {
+            console.log(`Server running on http://localhost:${port}`);
+        });
+    })
+    .catch(err => {
+        console.error('Impossible de se connecter à la base de données:', err);
     });
-});
+
+module.exports = app;
