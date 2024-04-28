@@ -11,6 +11,7 @@ function Connexion() {
   const [message, setMessage] = useState('');
   const [user, setUser] = useState(null);
 
+  // Vérifie si un utilisateur est déjà connecté au chargement du composant
   useEffect(() => {
     const loggedInUser = localStorage.getItem('user');
     if (loggedInUser) {
@@ -29,10 +30,11 @@ function Connexion() {
     }
   }, []);
 
+  // Gère la soumission des formulaires d'inscription et de connexion
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // Utilisation de la variable d'environnement pour l'URL de l'API
     const url = `${process.env.REACT_APP_API_URL}/users/${isSignUp ? 'register' : 'login'}`;
+
     try {
       const payload = isSignUp ? { username, email, password } : { email, password };
 
@@ -45,27 +47,20 @@ function Connexion() {
       });
       const data = await response.json();
       if (response.ok) {
-        if (!isSignUp || (isSignUp && !data.user)) {
-          setMessage(data.message + ' Please log in.');
-          if (!isSignUp && data.user) {
-            localStorage.setItem('user', JSON.stringify(data.user));
-            setUser(data.user);
-            setMessage('Connexion réussie!');
-            navigate('/');
-          }
-        } else {
-          throw new Error("Missing user data in response");
-        }
+        localStorage.setItem('user', JSON.stringify(data.user));
+        setUser(data.user);
+        navigate('/'); // Rediriger vers la page d'accueil après connexion
+        setMessage(isSignUp ? 'Inscription réussie!' : 'Connexion réussie!');
       } else {
         throw new Error(data.message || "Unable to login/register");
       }
-      
     } catch (error) {
       console.error('Error:', error);
       setMessage(error.message);
     }
   };
 
+  // Gère la déconnexion de l'utilisateur
   const handleLogout = () => {
     localStorage.removeItem('user');
     setUser(null);
