@@ -34,7 +34,7 @@
 }
 
 .connexion-page .form-group input {
-  width: 100%;
+  width: calc(100% - 20px); /* Ajustement pour prendre en compte le padding */
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ddd;
@@ -58,4 +58,10 @@
 .connexion-page button:hover {
   background-color: #484848; /* Gris plus foncé au survol */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .connexion-page form {
+    max-width: 300px; /* Réduction de la largeur maximale du formulaire pour les écrans mobiles */
+  }
 }

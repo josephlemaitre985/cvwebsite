@@ -1,7 +1,7 @@
 .footer {
     background-color: #343a40; /* Couleur de fond du footer plus sombre */
     color: white; /* Texte en blanc pour contraster avec le fond sombre */
-    padding: 40px 20px;
+    padding: 20px 20px; /* Padding réduit pour réduire la hauteur du footer */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,15 +14,15 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne sur petits écrans */
+    flex-wrap: wrap;
 }
 
 .footer-section {
-    flex: 1;
-    min-width: 250px; /* Minimum width for each section */
-    padding: 0 20px;
     display: flex;
-    flex-direction: column; /* Organise le contenu verticalement */
+    flex-direction: column;
+    align-items: center; /* Centre les éléments verticalement dans la section */
+    text-align: center; /* Centre le texte horizontalement */
+    padding: 20px;
 }
 
 .newsletter .input-group {
@@ -33,32 +33,33 @@
 .newsletter input[type="email"] {
     flex: 1;
     padding: 10px;
-    border: 1px solid #ccc; /* Bordure subtile pour plus d'élégance */
-    border-radius: 5px 0 0 5px; /* Bordures arrondies à gauche */
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
 }
 
 .newsletter button {
     padding: 10px 20px;
-    background-color: #6c757d; /* Gris élégant */
+    background-color: #6c757d;
     color: white;
     border: none;
-    border-radius: 0 5px 5px 0; /* Bordures arrondies à droite */
+    border-radius: 0 5px 5px 0;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .newsletter button:hover {
-    background-color: #5a6268; /* Gris foncé au survol */
+    background-color: #5a6268;
 }
 
 .social-icons {
     display: flex;
+    justify-content: center; /* Centre les icônes sociaux horizontalement */
     gap: 20px;
     font-size: 24px;
 }
 
 .social-icon:hover {
-    color: #adb5bd; /* Couleur subtile au survol */
+    color: #adb5bd;
 }
 
 .guarantees ul {
@@ -78,7 +79,9 @@
 
     .footer-section {
         text-align: center;
-        padding: 20px 0;
+        padding: 10px 0; /* Padding réduit pour les sections */
+        width: 100%; /* Assure que chaque section prend toute la largeur disponible */
+
     }
 
     .social-icons {
