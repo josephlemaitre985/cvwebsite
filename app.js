@@ -14,6 +14,7 @@ console.log('API URL:', process.env.REACT_APP_API_URL);
 
 const express = require('express');
 const userRoutes = require('./routes/userRoutes');
+const stripeRoutes = require('./routes/stripeRoutes'); // Importation des routes Stripe
 const sequelize = require('./config/database');
 const cors = require('cors');
 
@@ -34,6 +35,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/users', userRoutes);
+app.use('/api/stripe', stripeRoutes); // Utilisation des routes Stripe
 
 // Tester la connexion à la base de données avant de démarrer le serveur
 sequelize.authenticate()
