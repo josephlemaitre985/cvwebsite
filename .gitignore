@@ -1,0 +1,16 @@
+# Dépendances
+node_modules/
+
+# Fichiers d'environnement
+.env
+
+# Dossiers de cache
+.cache
+dist
+
+# Fichiers de logs
+*.log
+
+# Autres fichiers et dossiers à ignorer
+.DS_Store
+Thumbs.db
