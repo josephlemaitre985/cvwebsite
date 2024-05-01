@@ -1,0 +1,45 @@
+.checkout-container {
+  padding-top: 123px; /* Ajustez cela pour s'assurer que le contenu ne soit pas caché sous le Header */
+  padding-bottom: 70px; /* Espace au bas pour éviter le chevauchement avec le Footer */
+  margin: auto; /* Centrer le formulaire dans la page */
+  max-width: 600px; /* Largeur maximale pour le formulaire */
+  background: #f9f9f9; /* Couleur de fond légère */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Ombre subtile pour le formulaire */
+  /*padding: 20px; Padding interne pour le formulaire */
+  border-radius: 8px; /* Bords arrondis pour le formulaire */
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column; /* Les champs sont disposés verticalement */
+}
+
+.form-field {
+  margin-bottom: 20px; /* Espace entre les champs du formulaire */
+}
+
+.submit-button {
+  background-color: #4CAF50; /* Couleur verte pour le bouton */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px; /* Bords arrondis pour le bouton */
+  transition: background 0.3s ease-in-out;
+}
+
+.submit-button:hover {
+  background-color: #45a049; /* Changement de couleur au survol */
+}
+
+.card-element {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+}
