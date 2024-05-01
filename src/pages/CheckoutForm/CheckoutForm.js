@@ -12,7 +12,7 @@ function CheckoutForm() {
 
     // Charger le client_secret lorsque le composant est monté
     useEffect(() => {
-        fetch(`${API_BASE_URL}/api/stripe/payment-intent`, {
+        fetch(`${API_BASE_URL}/stripe/payment-intent`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
