@@ -23,7 +23,15 @@ const port = process.env.PORT || 5000;
 
 app.set('trust proxy', true);
 
-app.use(cors());
+// Configuration CORS spécifique en fonction de l'environnement
+const corsOptions = {
+    origin: process.env.NODE_ENV === 'production' 
+            ? 'https://cv-web-site-client-1663cb36180a.herokuapp.com'  // URL de production de votre front-end
+            : 'http://localhost:3000',  // URL de développement local de votre front-end
+    optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use((req, res, next) => {
     res.header('Content-Type', 'application/json');
