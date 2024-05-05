@@ -18,9 +18,7 @@ app.set('trust proxy', true);
 
 // Configuration CORS spécifique en fonction de l'environnement
 const corsOptions = {
-    origin: process.env.NODE_ENV === 'production' 
-            ? 'https://cv-web-site-client-1663cb36180a.herokuapp.com'
-            : 'http://localhost:3000',
+    origin: '*', // Attention: Utiliser '*' seulement pour le débogage
     optionsSuccessStatus: 200,
     credentials: true,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
